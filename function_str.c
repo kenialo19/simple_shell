@@ -38,3 +38,25 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (0);
 }
+
+/**
+ * _strcpy - copies the string pointed to by src into dest
+ * @dest: destination of the copy
+ * @src: source of the copy
+ *
+ * Return: char pointer to dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int len = 0;
+
+	for ( ; src[len] != '\0'; len++)
+	{
+		dest[len] = src[len];
+	}
+	dest[len] = 0;
+	return (dest);
+}
+
+
