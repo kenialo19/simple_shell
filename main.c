@@ -17,7 +17,7 @@ int main(void)
 	line = read_line();
 	arg = token_command(line);
 	for (j = 0; arg[j]; j++)
-		printf("%s\n", arg[j]);
+		printf("%s\n", arg[j]); /* print arguments in separate lines*/
 	}
 
 	free(line);
