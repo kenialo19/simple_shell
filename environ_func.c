@@ -10,7 +10,7 @@
 char *_getenv(const char *name)
 {
 	int i = 0;
-	char *nombre, *var;environ
+	char *nombre, *var;
 	int a = 0;
 
 	a = strlen(name);
