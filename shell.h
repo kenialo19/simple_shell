@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <stddef.h>
+#include <string.h>
 
 extern char **environ;
 
@@ -15,6 +16,8 @@ extern char **environ;
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
+int count_word(char *str);
 char *read_line(void);
+char **token_command(char *line);
 
 #endif /* _SHELL_H_*/
