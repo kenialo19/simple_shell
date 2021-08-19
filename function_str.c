@@ -14,7 +14,7 @@ int _strlen(char *s)
 	i = 0;
 	while (*(s + i) != '\0')
 	{
-	i++;
+		i++;
 	}
 	return (i);
 }
@@ -51,7 +51,7 @@ char *_strcpy(char *dest, char *src)
 {
 	int len = 0;
 
-	for ( ; src[len] != '\0'; len++)
+	for (; src[len] != '\0'; len++)
 	{
 		dest[len] = src[len];
 	}
@@ -59,17 +59,15 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-#define OUT    0
-#define IN    1
+#define OUT 0
+#define IN 1
 
 /**
- * _strcpy - copies the string pointed to by src into dest
- * @dest: destination of the copy
- * @src: source of the copy
+ * count_word- word counter
+ * @str: string a count.
  *
- * Return: char pointer to dest
+ * Return: a word.
  */
-
 int count_word(char *str)
 {
 	int count = OUT;
@@ -91,3 +89,28 @@ int count_word(char *str)
 	return (word);
 }
 
+/**
+ *  *_strncpy - copies a string.
+ * @dest: string.
+ * @src: string.
+ * @n: whole
+ *
+ * Return: dest.
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	int a = strlen(dest);
+	int b = strlen(src);
+	int k, s;
+
+	for (k = 0; k < n; k++)
+	{
+		dest[k] = src[k];
+	}
+	for (s = b; s < n; s++)
+	{
+		dest[s] = 0;
+	}
+	dest[a] = 0;
+	return (dest);
+}
