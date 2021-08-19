@@ -19,5 +19,9 @@ char *_strcpy(char *dest, char *src);
 int count_word(char *str);
 char *read_line(void);
 char **token_command(char *line);
+int child_exec(char **arg);
+
+/* PROTYPES ENVIRON */
+char *_getenv(const char *name);
 
 #endif /* _SHELL_H_*/

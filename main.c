@@ -14,10 +14,11 @@ int main(void)
 
 	while (1)
 	{
-	line = read_line();
-	arg = token_command(line);
-	for (j = 0; arg[j]; j++)
-		printf("%s\n", arg[j]); /* print arguments in separate lines*/
+		line = read_line();
+		arg = token_command(line);
+		for (j = 0; arg[j]; j++)
+			printf("%s\n", arg[j]); /* print arguments in separate lines*/
+		child_exec(arg);
 	}
 
 	free(line);
