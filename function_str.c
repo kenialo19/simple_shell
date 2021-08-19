@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _strlen - return lenght of the string.
@@ -59,4 +59,35 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 
+#define OUT    0
+#define IN    1
+
+/**
+ * _strcpy - copies the string pointed to by src into dest
+ * @dest: destination of the copy
+ * @src: source of the copy
+ *
+ * Return: char pointer to dest
+ */
+
+int count_word(char *str)
+{
+	int count = OUT;
+	int word = 0;
+
+	while (*str)
+	{
+		if (*str == ' ' || *str == '\n' || *str == '\t')
+		{
+			count = OUT;
+		}
+		else if (count == OUT)
+		{
+			count = IN;
+			word++;
+		}
+		str++;
+	}
+	return (word);
+}
 
