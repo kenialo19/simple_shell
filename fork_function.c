@@ -17,23 +17,26 @@ int child_exec(char **arg)
 		perror("Error");
 		exit(EXIT_FAILURE);
 	}
-	if (execve(arg[0], arg, NULL) == -1)
+	if (pid == 0)
 	{
-		perror("child");
-		exit(EXIT_FAILURE);
-	}
-	else if (pid < 0)
+		(execve(arg[0], arg, NULL));
+	}	 
+	if (pid < 0)
 	{
 		/*Error forking*/
-		perror("lsh");
+		perror("hsh");
 	}
 	else
 	{
-
-		do {
-			waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+		pid = wait(&status);
+		if (WIFEXITED(status)) 
+		{
+            printf("The process ended with exit(%d).\n", WEXITSTATUS(status));
+        }
+        if (WIFSIGNALED(status)) 
+		{
+            printf("The process ended with kill -%d.\n", WTERMSIG(status));
+        }
 	}
-
-	return (1);
+	return (0);
 }
