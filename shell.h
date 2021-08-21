@@ -10,6 +10,7 @@
 #include <stddef.h>
 #include <string.h>
 
+
 extern char **environ;
 
 /* PROTYPES FUNCTION_STRC */
@@ -22,6 +23,7 @@ int count_word(char *str);
 char *read_line(void);
 char **token_command(char *line);
 int child_exec(char **arg);
+void main(void);
 
 /* PROTYPES ENVIRON */
 char *_getenv(const char *name);
