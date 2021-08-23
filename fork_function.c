@@ -19,7 +19,7 @@ int child_exec(char **arg)
 	}
 	if (pid == 0)
 	{
-		(execve(arg[0], arg, NULL));
+		(execve(_path_dir(arg[0]), arg, NULL));
 	}	 
 	if (pid < 0)
 	{
