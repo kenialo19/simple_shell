@@ -1,5 +1,24 @@
 #include "shell.h"
 
+char *builtin(char *cmd, char *dir)
+{
+	char *c;
+	size_t m;
+
+	m = _strlen(dir) + _strlen(cmd);
+	c = malloc(sizeof(char) * m);
+	if (c == NULL)
+		{
+			return (NULL);
+		}
+	memset(c, 0, m);
+	c = strcat(c, dir);
+	c = strcat(c, "/");
+	c = strcat(c, cmd);
+
+	return (c);
+}
+
 /**
  * _path_dir - values path.
  * @dir: 
@@ -7,32 +26,32 @@
  * Return: no se.
  */
 
-char _path_dir(void)
+char *_path_dir(char *cmd)
 {
-	char *path = NULL, **dir = NULL, *cpypath = NULL;
-	char *colon = ":";
+	char *path, *dir;
+	char *colon = ":\n";
 	int lenght, j;
+	char *comand;
+	struct stat st;
+	/*char *dest;*/
 
 	path = _getenv("PATH");
-	/*if (!path)
+	dir = strtok(path, colon);
+	for (j = 1; dir != NULL; j++)
 	{
-		return (-1);
-	}*/
-	cpypath = _strcpy(cpypath, path);
-	lenght = _strlen(path);
-	dir = malloc(sizeof(char *) * (lenght + 1));
-	/*if (!dir)
-	{
-		return (NULL);
-	}*/
-	dir[0] = strtok(path, colon);
-
-	for (j = 1; j < lenght; j++)
-	{
-		dir[j] = strtok(NULL, colon);
-		printf("%s\n", dir[j]);
+		comand = builtin(cmd, dir);
+		if (stat(comand, &st) == 0)
+		{
+			dir = _strdup(comand);
+			//printf("%s\n", dir);
+			return (comand);
+		/*	free(comand);
+			free(path);
+			return (0);*/
+		}
+		dir = strtok(NULL, colon);
 	}
-	dir[j] = NULL;
-	free(dir);
-	/*return (dir);*/
+	free(comand);
+	free (dir);
+	return (NULL);
 }
