@@ -30,7 +30,7 @@ char *_path_dir(char *cmd)
 {
 	char *path, *dir;
 	char *colon = ":\n";
-	int lenght, j;
+	int j;
 	char *comand;
 	struct stat st;
 	/*char *dest;*/
@@ -43,9 +43,9 @@ char *_path_dir(char *cmd)
 		if (stat(comand, &st) == 0)
 		{
 			dir = _strdup(comand);
-			//printf("%s\n", dir);
+			/*printf("%s\n", dir);*/
 			return (comand);
-		/*	free(comand);
+			/*free(comand);
 			free(path);
 			return (0);*/
 		}
