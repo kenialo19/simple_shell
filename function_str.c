@@ -51,11 +51,14 @@ char *_strcpy(char *dest, char *src)
 {
 	int len = 0;
 
+	if (src == NULL)
+		printf("error");
+
 	for (; src[len] != '\0'; len++)
 	{
 		dest[len] = src[len];
 	}
-	dest[len] = 0;
+	dest[len] = '\0';
 	return (dest);
 }
 

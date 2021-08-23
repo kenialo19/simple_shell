@@ -19,10 +19,9 @@ int main(void)
 		line = read_line();
 		arg = token_command(line);
 		for (j = 0; arg[j]; j++)
-			printf("%s\n", arg[j]); /* print arguments in separate lines*/
+			//printf("%s\n", arg[j]); /* print arguments in separate lines*/
 		child_exec(arg);
-		path_value =_path_dir();
-
+	}
 	free(line);
 	free(arg);
 	return (0);

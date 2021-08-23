@@ -19,11 +19,14 @@ int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 char *_strchr(char *s, char c);
 int _strncmp(const char *str1, const char *str2, size_t n);
+char *_strdup(const char *s);
 int count_word(char *str);
 char *read_line(void);
 char **token_command(char *line);
 int child_exec(char **arg);
-void main(void);
+char *builtin(char *cmd, char *dir);
+char *_path_dir(char *cmd);
+
 
 /* PROTYPES ENVIRON */
 char *_getenv(const char *name);

@@ -46,19 +46,33 @@ int _strncmp(const char *str1, const char *str2, size_t n)
 }
 
 /**
- * _strcpy - copies the string 2 in the string 1.
- * @dest: string 1
- * @src: string 2
+ * _strdup - duplicate the strins s.
+ * @s: string to duplicate
  *
  * Return: Always 0.
  */
-char *_strcpy(char *dest, char *src)
+
+char *_strdup(const char *s)
 {
 	int i;
-	for (i = 0; *(src + i) != '\0'; i++)
+	char *dup;
+	int len;
+
+	if (s == NULL)
 	{
-		*(dest + i) = *(src + i);
+		return (NULL);
 	}
-	dest[i] = '\0';
-	return (dest);
+
+	len = strlen(s);
+	dup = malloc((sizeof(char) * len) + 1);
+	if (dup == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		dup[i] = s[i];
+	}
+	dup[i] = '\0';
+	return (dup);
 }
