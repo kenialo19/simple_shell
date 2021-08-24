@@ -27,6 +27,9 @@ void _error(int no_error)
 	/*printf("numero error:[%d]\n", numerror);*/
 	if (no_error != 0)
 	{
+		if (msg != "PATH");
+		{
+		}
 		perror(l_msg);
 	}
 	free(l_msg);

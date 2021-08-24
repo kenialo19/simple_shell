@@ -37,6 +37,8 @@ char *_path_dir(char *cmd);
 
 /* PROTOTYPES BUILTIN */
 
+int _env();
+void _exit(int status);
 
 /* PROTYPES ERROR */
 void _error(int no_error);
