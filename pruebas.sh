@@ -89,6 +89,20 @@ else
     echo Check 7 ❌
 fi
 
+simple_shell=$(echo "pwd
+exit
+whoami" | ./hsh);
+sh=$(echo "pwd
+exit
+whoami" | sh);
+
+if [ "${simple_shell}" == "${sh}" ]
+then
+    echo Check 8 ✅
+else
+    echo Check 8 ❌
+fi
+
 # Error Messages
 echo "echo '\n'" | sh;
 
