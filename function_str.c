@@ -52,7 +52,7 @@ char *_strcpy(char *dest, char *src)
 	int len = 0;
 
 	if (src == NULL)
-		printf("error");
+		perror("error");
 
 	for (; src[len] != '\0'; len++)
 	{
