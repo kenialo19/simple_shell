@@ -7,13 +7,11 @@
  * Return: Always int.
  */
 
-extern char **environ;
-
-int _env()
+int _env(void)
 {
 	int i = 0; 
 	char b = '\n';
-
+	
 	while (environ[i] != NULL)
 	{
 		write(1, environ[i], _strlen(environ[i]));
@@ -30,13 +28,7 @@ int _env()
  * Return: nothing.
  */
 
-void _exit(int status)
+int _dep_exit(void)
 {
-	struct stat st;
-	char **arg;
-
-	if (stat(arg[0], &st) == 0)
-	{
-		write(1, "", 0);
-	}
+	return (1);
 }

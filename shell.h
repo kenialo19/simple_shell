@@ -15,6 +15,11 @@ extern char **environ;
 char *msg;
 int count;
 
+typedef struct built{
+	char *vble;
+	int (*b)();
+} built_t;
+
 /* PROTYPES FUNCTION_STRC */
 
 int _strlen(char *s);
@@ -37,8 +42,9 @@ char *_path_dir(char *cmd);
 
 /* PROTOTYPES BUILTIN */
 
-int _env();
-void _exit(int status);
+int _env(void);
+int _dep_exit(void);
+int (*_get_built(char *s))();
 
 /* PROTYPES ERROR */
 void _error(int no_error);

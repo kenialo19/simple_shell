@@ -14,6 +14,7 @@ int main(void)
 {
 	char *line;
 	char **arg;
+	int (*b)();
 
 	count = 0;
 	while (1)
@@ -28,12 +29,22 @@ int main(void)
 		printf("msg- main->[%s]", msg);*/
 		if (line == NULL)
 		{
-			printf("line- main->[%s]", line);
+			/*printf("line- main->[%s]", line);*/
 			return (-1);
 		}
+		
 		/*printf("ANTESarg- main->[%s]", arg[0]);*/
 		arg = token_command(line);
 		/*printf("arg- main->[%s]", arg[0]);*/
+		b = _get_built(arg[0]);
+		if (b)
+		{
+			if (b() == 1)		
+			{
+				return (1);
+			}
+			continue;
+		}
 		/* for (j = 0; arg[j]; j++) printf("%s\n", arg[j]); print arguments in separate lines*/
 		child_exec(arg);
 		
@@ -41,5 +52,8 @@ int main(void)
 		free(arg);
 		free(line);
 	}
+	free(msg);
+	free(arg);
+	free(line);
 	return (0);
 }
