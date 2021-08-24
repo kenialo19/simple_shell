@@ -18,7 +18,9 @@ int main(void)
 	count = 0;
 	while (1)
 	{
+		
 		line = read_line();
+		
 		msg = malloc(sizeof(char) * _strlen(line) + 1);
 		_strcpy(msg, line);
 		count++;
@@ -29,13 +31,17 @@ int main(void)
 			printf("line- main->[%s]", line);
 			return (-1);
 		}
-
+		/*printf("ANTESarg- main->[%s]", arg[0]);*/
 		arg = token_command(line);
+		/*printf("arg- main->[%s]", arg[0]);*/
 		/* for (j = 0; arg[j]; j++) printf("%s\n", arg[j]); print arguments in separate lines*/
 		child_exec(arg);
+		
 		free(msg);
+		free(arg);
+		free(line);
 	}
-	free(line);
-	free(arg);
+	
+	
 	return (0);
 }

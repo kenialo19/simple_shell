@@ -12,14 +12,14 @@ char **token_command(char *line)
 {
 	char **token = NULL;
 	char *space = " \n";
-	int size;
+	int size = 0;
 	int i = 0;
 
 	if (line == NULL)
 	{
 		return (NULL);
 	}	
-	size = count_word(line);
+	size = count_word(line, " ");
 	
 	token = malloc(sizeof(char *) * size);
 	if (!token)

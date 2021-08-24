@@ -71,14 +71,14 @@ char *_strcpy(char *dest, char *src)
  *
  * Return: a word.
  */
-int count_word(char *str)
+int count_word(char *str, char *delim)
 {
 	int count = OUT;
 	int word = 0;
 
 	while (*str)
 	{
-		if (*str == ' ' || *str == '\n' || *str == '\t')
+		if (*str == *delim || *str == '\n' || *str == '\t')
 		{
 			count = OUT;
 		}

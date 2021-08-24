@@ -6,7 +6,7 @@ char *builtin(char *cmd, char *dir)
 	size_t m;
 
 	m = _strlen(dir) + _strlen(cmd);
-	c = malloc(sizeof(char) * m);
+	c = malloc(sizeof(char) * m + 1);
 	if (c == NULL)
 		{
 			return (NULL);
@@ -34,6 +34,9 @@ char *_path_dir(char *cmd)
 	char *comand;
 	struct stat st;
 	/*char *dest;*/
+
+	if (stat(cmd, &st) == 0)
+		return(cmd);
 
 	path = _getenv("PATH");
 	dir = strtok(path, colon);

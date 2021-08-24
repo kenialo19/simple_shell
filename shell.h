@@ -23,7 +23,7 @@ char *_strcpy(char *dest, char *src);
 char *_strchr(char *s, char c);
 int _strncmp(const char *str1, const char *str2, size_t n);
 char *_strdup(const char *s);
-int count_word(char *str);
+int count_word(char *str, char *delim);
 
 /* PROTYPES SHELL */
 
@@ -35,6 +35,7 @@ char *builtin(char *cmd, char *dir);
 char *_path_dir(char *cmd);
 
 /* PROTOTYPES BUILTIN */
+
 
 /* PROTYPES ERROR */
 void _error(int no_error);

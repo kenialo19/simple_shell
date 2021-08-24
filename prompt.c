@@ -16,8 +16,11 @@ char *read_line()
 	/*printf("isaty:[%d]\n", isatty(STDIN_FILENO));*/
 	if (isatty(STDIN_FILENO) != 0)
 		write(STDOUT_FILENO, prompt, _strlen(prompt));
-	c = getline(&line, &linez, stdin);
 
+	/*printf("ANTESread_line-line=[%s]-linez=[%ld]-c=[%d]\n", line, linez, c);*/
+	
+	c = getline(&line, &linez, stdin);
+	
 	/*printf("read_line-line=[%s]-linez=[%ld]-c=[%d]\n", line, linez, c);*/
 
 	if (feof(stdin))
@@ -28,7 +31,7 @@ char *read_line()
 
 	if (c == -1)
 	{
-		printf("read_line-c == -1\n");
+		/*printf("read_line-c == -1\n");*/
 		free(line);
 		return (NULL);
 	}
