@@ -41,7 +41,5 @@ int main(void)
 		free(arg);
 		free(line);
 	}
-	
-	
 	return (0);
 }

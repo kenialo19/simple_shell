@@ -23,6 +23,7 @@ char *_strcpy(char *dest, char *src);
 char *_strchr(char *s, char c);
 int _strncmp(const char *str1, const char *str2, size_t n);
 char *_strdup(const char *s);
+char *_strcat(char *dest, char *src);
 int count_word(char *str, char *delim);
 
 /* PROTYPES SHELL */

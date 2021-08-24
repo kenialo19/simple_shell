@@ -12,9 +12,9 @@ char *builtin(char *cmd, char *dir)
 			return (NULL);
 		}
 	memset(c, 0, m);
-	c = strcat(c, dir);
-	c = strcat(c, "/");
-	c = strcat(c, cmd);
+	c = _strcat(c, dir);
+	c = _strcat(c, "/");
+	c = _strcat(c, cmd);
 
 	return (c);
 }
