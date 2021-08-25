@@ -97,6 +97,7 @@ $
 | _strncmp ⓢ | copies a string in long array |
 | *_strdup ⓢ | duplicate the strings. |
 | count_word ⓢ | word counter |
+| signal_c ⓢ | woverview of signals|
 
 ## Functions Shell   📟  📟 
  Functions | Description |
@@ -117,13 +118,15 @@ $
  Functions | Description |
 | ------ | ------ |
 | _env  | function the print enviromen |
-| _exit | function for exit of the program |
+| _dep_exit | function for exit of the program |
 
 
 BUILDED WITH ⚡ ⚡ 
+
 VISUAL STUDIO CODE🔵IN C LANGUAGE ⚡
 
 # AUTHORS   🙇     
+
 
  🙇   SHIRLEY CAMARGO 
   🙇   KENIA LOPEZ.
