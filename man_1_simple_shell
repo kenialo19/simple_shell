@@ -1,0 +1,25 @@
+.TH HSH 0.1 "August 2021" "Holberton Colombia -Medellin" "Holberton Simple Shell"
+.SH NAME
+.B hsh
+- command interpreter (simple shell).
+.SH SYNOPSIS
+hsh [filename]
+
+.SH DESCRIPTION
+.B hsh
+Our simple \chispun\ shell interprets and executes commands passed from standard input or from a relative path
+ (./myls, for example) and can be used interactively and non-interactively.
+
+.B Invocation
+The first non-option argument specified on the command line will be treated as the name of a file from which to read commands 
+(a shell script), and the remaining arguments are set as the positional parameters of the shell ($1, $2, etc.). Otherwise, 
+the shell reads commands from its standard input.
+
+
+
+
+
+
+
+.SH BUGS
+No known bugs until now.
