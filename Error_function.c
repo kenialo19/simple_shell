@@ -14,7 +14,7 @@ void _error(int no_error, char *msg, int count)
 
 	l_msg = malloc(sizeof(char) * _strlen(msg));
 
-	itoa(l_msg, "chispun: %d: ", count);
+	sprintf(l_msg, "chispun: %d: ", count);
 
 	_strcat(l_msg, msg);
 

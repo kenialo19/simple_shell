@@ -12,8 +12,6 @@
 #include <errno.h>
 
 extern char **environ;
-char *msg;
-int count;
 
 typedef struct built
 {
