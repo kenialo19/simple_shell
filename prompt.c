@@ -18,7 +18,7 @@ char *read_line()
 
 	c = getline(&line, &linez, stdin);
 
-	if (feof(stdin))
+	if (c == EOF)
 	{
 		exit(EXIT_SUCCESS);
 	}
