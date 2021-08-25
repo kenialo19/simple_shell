@@ -21,7 +21,7 @@ int child_exec(char **arg, char *msg, int count)
 	if (pid == 0)
 	{
 		lib_path = _path_dir(arg[0]);
-		execve(lib_path, arg, NULL);
+		execve(lib_path, arg, environ);
 		numbererr = errno;
 		_error(numbererr, msg, count);
 		free(lib_path);
