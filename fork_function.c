@@ -5,7 +5,7 @@
  * @arg: argument
  * Return: 1.
  */
-int child_exec(char **arg)
+int child_exec(char **arg, char *msg, int count)
 {
 	pid_t pid;
 	int status, numbererr = 0;
@@ -23,7 +23,7 @@ int child_exec(char **arg)
 		lib_path = _path_dir(arg[0]);
 		execve(lib_path, arg, NULL);
 		numbererr = errno;
-		_error(numbererr);
+		_error(numbererr, msg, count);
 		free(lib_path);
 		exit(0);
 	}

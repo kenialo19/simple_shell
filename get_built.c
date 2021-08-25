@@ -17,7 +17,7 @@ int (*_get_built(char *s))()
 
 	while (bin[i].vble != NULL)
 	{
-		if ((strcmp(bin[i].vble, s)) == 0)
+		if ((_strcmp(bin[i].vble, s)) == 0)
 		{
 			return (bin[i].b);
 		}
