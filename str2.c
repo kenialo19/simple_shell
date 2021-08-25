@@ -102,3 +102,13 @@ char *_strcat(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
+
+/**
+ *signal - 
+ *@signal: 
+ */
+void signal_c(__attribute__((unused))int signal)
+{
+	write(STDOUT_FILENO, "\n", 1);
+	write(STDOUT_FILENO, "cisfun$ ", 8);
+}

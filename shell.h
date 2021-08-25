@@ -10,6 +10,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <errno.h>
+#include <signal.h>
 
 extern char **environ;
 
@@ -29,7 +30,7 @@ int _strncmp(const char *str1, const char *str2, size_t n);
 char *_strdup(const char *s);
 char *_strcat(char *dest, char *src);
 int count_word(char *str, char *delim);
-char* itoa(int value, char* buffer, int base);
+void signal_c(__attribute__((unused))int signal);
 
 /* PROTYPES SHELL */
 
