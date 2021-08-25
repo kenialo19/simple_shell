@@ -31,13 +31,14 @@ int _strncmp(const char *str1, const char *str2, size_t n);
 char *_strdup(const char *s);
 char *_strcat(char *dest, char *src);
 int count_word(char *str, char *delim);
+char* itoa(int value, char* buffer, int base);
 
 /* PROTYPES SHELL */
 
 char *_getenv(const char *name);
 char *read_line();
 char **token_command(char *line);
-int child_exec(char **arg);
+int child_exec(char **arg, char *msg, int count);
 char *builtin(char *cmd, char *dir);
 char *_path_dir(char *cmd);
 
@@ -48,6 +49,6 @@ int _dep_exit(void);
 int (*_get_built(char *s))();
 
 /* PROTYPES ERROR */
-void _error(int no_error);
+void _error(int no_error, char *msg, int count);
 
 #endif /* _SHELL_H_*/
