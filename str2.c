@@ -21,7 +21,7 @@ char *_strchr(char *s, char c)
 }
 
 /**
- * _strncpy - copies a string in long array.
+ * _strncmp - copies a string in long array.
  * @str1: string 1
  * @str2: string 2
  * @n: The maximum number of characters to be compared.
@@ -87,18 +87,18 @@ char *_strdup(const char *s)
 
 char *_strcat(char *dest, char *src)
 {
-    int i = 0, j = 0;
+	int i = 0, j = 0;
 
-    while (dest[i] != '\0')
-    {
-        i++;
-    }
-    while (src[j] != '\0')
-    {
-        dest[i] = src[j];
-        i++;
-        j++;
-    }
-    dest[i] = '\0';
-    return (dest);
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

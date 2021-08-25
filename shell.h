@@ -15,7 +15,8 @@ extern char **environ;
 char *msg;
 int count;
 
-typedef struct built{
+typedef struct built
+{
 	char *vble;
 	int (*b)();
 } built_t;

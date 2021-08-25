@@ -9,6 +9,7 @@ int child_exec(char **arg)
 {
 	pid_t pid;
 	int status, numbererr = 0;
+	char *lib_path;
 
 	pid = fork();
 
@@ -19,18 +20,15 @@ int child_exec(char **arg)
 	}
 	if (pid == 0)
 	{
-		/*printf("arg-->%s\n", arg[0]);*/
-		execve(_path_dir(arg[0]), arg, NULL);
+		lib_path = _path_dir(arg[0]);
+		execve(lib_path, arg, NULL);
 		numbererr = errno;
-		/*printf("numero numbererr:[%d]\n", numbererr);
-		printf("numero j:[%d]\n", j);*/
 		_error(numbererr);
+		free(lib_path);
 		exit(0);
-		/*printf("numero j:[%d]\n", j);*/
 	}
 
-	/*if (pid < 0)*/
 	pid = wait(&status);
-	
+
 	return (0);
 }

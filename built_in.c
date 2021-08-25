@@ -1,17 +1,16 @@
 #include "shell.h"
 
 /**
- * _strlen - return lenght of the string.
- * @s: string
+ * _env - write variable enviromen.
  *
  * Return: Always int.
  */
 
 int _env(void)
 {
-	int i = 0; 
+	int i = 0;
 	char b = '\n';
-	
+
 	while (environ[i] != NULL)
 	{
 		write(1, environ[i], _strlen(environ[i]));
@@ -22,8 +21,7 @@ int _env(void)
 }
 
 /**
- * _exit - return lenght of the string.
- * @status: integer
+ * _dep_exit - exit command.
  *
  * Return: nothing.
  */

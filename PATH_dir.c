@@ -1,5 +1,13 @@
 #include "shell.h"
 
+/**
+ * *builtin - allocate memory.
+ * @cmd: command
+ * @dir: dir path
+ *
+ * Return: a char.
+ */
+
 char *builtin(char *cmd, char *dir)
 {
 	char *c;
@@ -8,9 +16,9 @@ char *builtin(char *cmd, char *dir)
 	m = _strlen(dir) + _strlen(cmd);
 	c = malloc(sizeof(char) * m + 1);
 	if (c == NULL)
-		{
-			return (NULL);
-		}
+	{
+		return (NULL);
+	}
 	memset(c, 0, m);
 	c = _strcat(c, dir);
 	c = _strcat(c, "/");
@@ -21,9 +29,9 @@ char *builtin(char *cmd, char *dir)
 
 /**
  * _path_dir - values path.
- * @dir: 
- * 
- * Return: no se.
+ * @cmd: line entered.
+ *
+ * Return: a char.
  */
 
 char *_path_dir(char *cmd)
@@ -36,7 +44,7 @@ char *_path_dir(char *cmd)
 	/*char *dest;*/
 
 	if (stat(cmd, &st) == 0)
-		return(cmd);
+		return (cmd);
 
 	path = _getenv("PATH");
 	dir = strtok(path, colon);
@@ -46,15 +54,11 @@ char *_path_dir(char *cmd)
 		if (stat(comand, &st) == 0)
 		{
 			dir = _strdup(comand);
-			/*printf("%s\n", dir);*/
 			return (comand);
-			/*free(comand);
-			free(path);
-			return (0);*/
 		}
 		dir = strtok(NULL, colon);
 	}
 	free(comand);
-	free (dir);
+	free(dir);
 	return (NULL);
 }

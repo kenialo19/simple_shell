@@ -29,14 +29,21 @@ int _strlen(char *s)
 
 int _strcmp(char *s1, char *s2)
 {
-	int i;
+	int valor = 0;
 
-	i = 0;
-	if (s1[i] != s2[i])
+	if (s1 < s2)
 	{
-		return (s1[i] - s2[i]);
+		valor = -1;
 	}
-	return (0);
+	else if (s1 > s2)
+	{
+		valor = 1;
+	}
+	else
+	{
+		valor = 0;
+	}
+	return (valor);
 }
 
 /**
@@ -68,6 +75,7 @@ char *_strcpy(char *dest, char *src)
 /**
  * count_word- word counter
  * @str: string a count.
+ * @delim: delimitator.
  *
  * Return: a word.
  */

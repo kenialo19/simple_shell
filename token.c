@@ -3,11 +3,10 @@
 /**
  * token_command - get token of the string
  * @line: string
- * 
- * 
+ *
  * Return: integer
  */
- 
+
 char **token_command(char *line)
 {
 	char **token = NULL;
@@ -18,9 +17,9 @@ char **token_command(char *line)
 	if (line == NULL)
 	{
 		return (NULL);
-	}	
+	}
 	size = count_word(line, " ");
-	
+
 	token = malloc(sizeof(char *) * size);
 	if (!token)
 	{
@@ -32,5 +31,5 @@ char **token_command(char *line)
 	{
 		token[i] = strtok(NULL, space);
 	}
-	return(token);
+	return (token);
 }
