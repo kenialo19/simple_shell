@@ -14,7 +14,7 @@ char *builtin(char *cmd, char *dir)
 	size_t m;
 
 	m = _strlen(dir) + _strlen(cmd);
-	c = malloc(sizeof(char) * m + 1);
+	c = malloc(sizeof(char) * m + 2);
 	if (c == NULL)
 	{
 		return (NULL);
@@ -54,7 +54,7 @@ char *_path_dir(char *cmd)
 		if (stat(comand, &st) == 0)
 		{
 			dir = _strdup(comand);
-			return (comand);
+			return (dir);
 		}
 		dir = strtok(NULL, colon);
 	}

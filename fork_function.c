@@ -25,7 +25,7 @@ int child_exec(char **arg, char *msg, int count)
 		numbererr = errno;
 		_error(numbererr, msg, count);
 		free(lib_path);
-		exit(0);
+		exit(EXIT_SUCCESS);
 	}
 
 	pid = wait(&status);
