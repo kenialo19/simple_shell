@@ -14,6 +14,12 @@
 
 extern char **environ;
 
+/**
+ * struct built - singly linked list
+ * @vble: variable
+ * @b: function
+ */
+
 typedef struct built
 {
 	char *vble;
@@ -30,14 +36,14 @@ int _strncmp(const char *str1, const char *str2, size_t n);
 char *_strdup(const char *s);
 char *_strcat(char *dest, char *src);
 int count_word(char *str, char *delim);
-void signal_c(__attribute__((unused))int signal);
+void signal_c(__attribute__((unused)) int signal);
 
 /* PROTYPES SHELL */
 
 char *_getenv(const char *name);
 char *read_line();
 char **token_command(char *line);
-int child_exec(char **arg, char *msg, int count);
+int child_exec(char **arg, char *msg, long count);
 char *builtin(char *cmd, char *dir);
 char *_path_dir(char *cmd);
 
@@ -48,6 +54,7 @@ int _dep_exit(void);
 int (*_get_built(char *s))();
 
 /* PROTYPES ERROR */
-void _error(int no_error, char *msg, int count);
+void _error(int no_error, char *msg, long count);
+void _itoa(long i, char *str);
 
 #endif /* _SHELL_H_*/

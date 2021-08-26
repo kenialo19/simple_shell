@@ -1,6 +1,28 @@
 #include "shell.h"
 
 /**
+ * _itoa - converts integer to string
+ * @i: integer
+ * @str: string
+ * Return: void.
+ */
+void _itoa(long i, char *str)
+{
+	int power = 0, j = 0;
+
+	j = i;
+	for (power = 1; j > 0; j /= 10)
+		power *= 10;
+
+	for (; power > 0; power /= 10)
+	{
+		*str++ = '0' + i / power;
+		i %= power;
+	}
+	*str = '\0';
+}
+
+/**
  * _error - function error
  * @no_error:  error.
  * @msg: wrong command
@@ -8,11 +30,12 @@
  *
  * Return: void
  */
-void _error(int no_error, char *msg, int count)
+void _error(int no_error, char *msg, long count)
 {
 	int len = 0;
 	char *l_msg = NULL;
 	char *msg_nof = ": not found\n";
+	char buff[20];
 
 	l_msg = malloc((sizeof(char) * _strlen(msg)) + 1);
 	if (l_msg == NULL)
@@ -20,8 +43,11 @@ void _error(int no_error, char *msg, int count)
 		free(l_msg);
 		return;
 	}
-	sprintf(l_msg, "chispun: %d: ", count);
-
+	/*sprintf(l_msg, "chispun: %d: ", count);*/
+	_itoa(count, buff);
+	_strcat(l_msg, "hsh: ");
+	_strcat(l_msg, buff);
+	_strcat(l_msg, ": ");
 	_strcat(l_msg, msg);
 
 	len = _strlen(l_msg);

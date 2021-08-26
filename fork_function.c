@@ -8,7 +8,7 @@
  *
  * Return: 1.
  */
-int child_exec(char **arg, char *msg, int count)
+int child_exec(char **arg, char *msg, long count)
 {
 	pid_t pid;
 	int status, numbererr = 0;

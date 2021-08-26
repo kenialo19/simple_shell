@@ -9,10 +9,10 @@ int main(void)
 	char *line, *msg;
 	char **arg;
 	int (*b)();
-	int count, i, j = 0;
+	long count = 0;
+	int i, j = 0;
 
 	signal(SIGINT, signal_c);
-	count = 0;
 	while (1)
 	{
 		line = read_line();
@@ -23,7 +23,8 @@ int main(void)
 			if (line[i] != ' ')
 			{
 				j = 1;
-				break; }
+				break;
+			}
 		}
 		if (line != NULL && line[0] != '\n' && j != 0)
 		{
@@ -35,8 +36,10 @@ int main(void)
 			{
 				if (b() == 1)
 				{
-					return (1); }
-				continue; }
+					return (1);
+				}
+				continue;
+			}
 			child_exec(arg, msg, count);
 			free(msg), free(arg), free(line);
 		}
