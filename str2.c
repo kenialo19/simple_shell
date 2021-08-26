@@ -113,5 +113,5 @@ char *_strcat(char *dest, char *src)
 void signal_c(__attribute__((unused))int signal)
 {
 	write(STDOUT_FILENO, "\n", 1);
-	write(STDOUT_FILENO, "chispun$ ", 8);
+	write(STDOUT_FILENO, "chispun$ ", 9);
 }
