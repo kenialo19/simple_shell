@@ -1,5 +1,5 @@
 [a-z]
-*hsh
+*.hsh
 # Created by https://www.toptal.com/developers/gitignore/api/windows,linux,c
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,c
 
