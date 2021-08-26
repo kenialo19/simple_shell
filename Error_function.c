@@ -17,7 +17,6 @@ void _itoa(long i, char *str)
 	for (; power > 0; power /= 10)
 	{
 		*str = '0' + i / power;
-		printf("str[%s]- %ld - %d \n", str,i,power);
 		str++;
 		i %= power;
 	}
