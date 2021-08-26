@@ -30,7 +30,6 @@ int child_exec(char **arg, char *msg, long count)
 		free(lib_path);
 		exit(EXIT_SUCCESS);
 	}
-
 	pid = wait(&status);
 
 	return (0);

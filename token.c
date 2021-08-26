@@ -20,7 +20,7 @@ char **token_command(char *line)
 	}
 	size = count_word(line, " ");
 
-	token = malloc(sizeof(char *) * size + 1);
+	token = malloc(sizeof(char *) * size + 2);
 	if (!token)
 	{
 		free(token);
@@ -32,5 +32,6 @@ char **token_command(char *line)
 	{
 		token[i] = strtok(NULL, space);
 	}
+
 	return (token);
 }

@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * main - execute functions.
  * Return: Void.
@@ -17,6 +16,8 @@ int main(void)
 	{
 		line = read_line();
 		count++;
+		if (line == NULL)
+			return (0);
 		j = 0;
 		for (i = 0; line[i] != '\n'; i++)
 		{
@@ -38,11 +39,10 @@ int main(void)
 				{
 					return (1);
 				}
-				continue;
-			}
+				continue; }
 			child_exec(arg, msg, count);
-			free(msg), free(arg), free(line);
-		}
+			free(msg), free(arg); }
+		free(line);
 	}
 	return (0);
 }

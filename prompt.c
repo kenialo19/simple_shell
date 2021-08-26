@@ -13,21 +13,19 @@ char *read_line()
 	size_t linez = 0;
 	int c = 0;
 
-		if (isatty(STDIN_FILENO) != 0)
+	if (isatty(STDIN_FILENO) != 0)
 		write(STDOUT_FILENO, prompt, _strlen(prompt));
 
 	c = getline(&line, &linez, stdin);
-
-	if (c == EOF)
+	if (line == NULL)
 	{
-		exit(EXIT_SUCCESS);
+		free(line);
+		return (NULL);
 	}
-
 	if (c == -1)
 	{
 		free(line);
 		return (NULL);
 	}
-
 	return (line);
 }
