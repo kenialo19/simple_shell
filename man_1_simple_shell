@@ -30,16 +30,32 @@ status of the last command executed, or if the
 .B exit
 builtin is used with a numeric argument, it will return the argument.
 
+.SH EXAMPLES
+
 .B Mode  interactive
+.br
+$ ./hsh
 #chispun$ pwd
+.br
 /mnt/c/Users/winda/kenialo/simple_shell
-#chispun$ echo man shell
+.br
+#chispun$
+.br
+#chispun$ echo "man shell"
+.br
 man shell
 
 .B Mode no interactive
-#chispun$ echo "pwd" | ./hsh
+.br
+$ echo "pwd" | ./hsh
+.br
 /mnt/c/Users/winda/kenialo/simple_shell
-
+.br
+$ echo "man shell"
+.br
+man shell
+.br
+$
 
 .SH BUGS
 No known bugs until now.
