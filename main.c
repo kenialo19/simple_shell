@@ -1,33 +1,33 @@
 #include "shell.h"
+
 /**
  * main - execute functions.
- *
  * Return: Void.
  */
-
 int main(void)
 {
 	char *line, *msg;
 	char **arg;
 	int (*b)();
-	int count;
+	int count, i, j = 0;
 
-	
 	signal(SIGINT,signal_c);
 	count = 0;
 	while (1)
 	{
 		line = read_line();
 		count++;
-		/*while(line != NULL)
+		
+		j = 0;
+		for(i = 0; line[i] != '\n'; i++)
 		{
-		if(*line == ' ')
+			if(line[i] != ' ')
 			{
-				line++;
+				j = 1;
+				break;
 			}
-		break;
-		}*/
-		if ((line != NULL && line[0] != '\n'))
+		}
+		if (line != NULL && line[0] != '\n' && j != 0)
 		{
 			msg = malloc(sizeof(char) * _strlen(line) + 1);
 			_strcpy(msg, line);
@@ -47,6 +47,5 @@ int main(void)
 			free(msg), free(arg), free(line);
 		}
 	}
-	
 	return (0);
 }
