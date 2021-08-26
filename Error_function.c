@@ -43,7 +43,6 @@ void _error(int no_error, char *msg, long count)
 		free(l_msg);
 		return;
 	}
-	/*sprintf(l_msg, "chispun: %d: ", count);*/
 	_itoa(count, buff);
 	_strcat(l_msg, "hsh: ");
 	_strcat(l_msg, buff);
