@@ -11,12 +11,14 @@ void _itoa(long i, char *str)
 	int power = 0, j = 0;
 
 	j = i;
-	for (power = 1; j > 0; j /= 10)
+	for (power = 1; j > 10; j /= 10)
 		power *= 10;
 
 	for (; power > 0; power /= 10)
 	{
-		*str++ = '0' + i / power;
+		*str = '0' + i / power;
+		printf("str[%s]- %ld - %d \n", str,i,power);
+		str++;
 		i %= power;
 	}
 	*str = '\0';
