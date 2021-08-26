@@ -15,11 +15,40 @@ The first non-option argument specified on the command line will be treated as t
 (a shell script), and the remaining arguments are set as the positional parameters of the shell ($1, $2, etc.). Otherwise, 
 the shell reads commands from its standard input.
 
+.SH ENVIRONMENT
+Environment variables affect the execution of
+.B sh
+:
 
+     ENV	Initialization file for interactive shells.
 
+.SH EXIT STATUS
 
+Errors that are detected by the shell, such as a syntax error, will cause the shell to exit with a non-zero exit status.
+If the shell is not an interactive shell, the execution of the shell file will be aborted. Otherwise the shell will return the exit 
+status of the last command executed, or if the
+.B exit
+builtin is used with a numeric argument, it will return the argument.
 
+.B Mode  interactive
+#chispun$ pwd
+/mnt/c/Users/winda/kenialo/simple_shell
+#chispun$ echo man shell
+man shell
+
+.B Mode no interactive
+#chispun$ echo "pwd" | ./hsh
+/mnt/c/Users/winda/kenialo/simple_shell
 
 
 .SH BUGS
 No known bugs until now.
+
+If the function is found when searching for the command to execute in the different directories of the $PATH, its output status becomes
+the shell's output status. If, on the other hand, the function is not defined, the shell prints an error message and returns an output
+status of 127 (which can be checked with '$?').
+
+.SH AUTHORS
+
+Kenia Lopez.
+Shirley Camargo.
