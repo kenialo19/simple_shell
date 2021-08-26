@@ -3,6 +3,9 @@
 /**
  * child_exec - create fork.
  * @arg: argument
+ * @msg: wrong command
+ * @count: execution count
+ *
  * Return: 1.
  */
 int child_exec(char **arg, char *msg, int count)

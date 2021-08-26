@@ -104,9 +104,12 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- *signal - 
- *@signal: 
+ * signal_c - ANSI-C signal handling
+ * @signal: variable
+ *
+ * Return: void
  */
+
 void signal_c(__attribute__((unused))int signal)
 {
 	write(STDOUT_FILENO, "\n", 1);

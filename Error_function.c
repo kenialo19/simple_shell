@@ -3,6 +3,8 @@
 /**
  * _error - function error
  * @no_error:  error.
+ * @msg: wrong command
+ * @count: execution count
  *
  * Return: void
  */
