@@ -8,7 +8,7 @@
 
 int _env(void)
 {
-	unsigned int i = 0;
+	int i = 0;
 	char b = '\n';
 
 	while (environ[i] != NULL)
