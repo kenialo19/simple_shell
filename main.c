@@ -18,7 +18,7 @@ int main(void)
 		line = read_line();
 		count++;
 		if (line == NULL)
-			return(0);
+			return (0);
 		j = 0;
 		for (i = 0; line[i] != '\n'; i++)
 		{
