@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * main - execute functions.
  * Return: Void.
@@ -17,15 +18,14 @@ int main(void)
 		line = read_line();
 		count++;
 		if (line == NULL)
-			return (0);
+			return(0);
 		j = 0;
 		for (i = 0; line[i] != '\n'; i++)
 		{
 			if (line[i] != ' ')
 			{
 				j = 1;
-				break;
-			}
+				break; }
 		}
 		if (line != NULL && line[0] != '\n' && j != 0)
 		{

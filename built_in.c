@@ -13,7 +13,7 @@ int _env(void)
 
 	while (environ[i] != NULL)
 	{
-		write(1, environ[i], (_strlen(environ[i]) + 1));
+		write(1, environ[i], (_strlen(environ[i] + 1)));
 		write(1, &b, 1);
 		i++;
 	}
