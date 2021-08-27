@@ -24,7 +24,6 @@ char *read_line()
 	}
 	if (c == -1)
 	{
-		write(1, "\n", 2);
 		free(line);
 		return (NULL);
 	}
