@@ -37,8 +37,7 @@ int main(void)
 			{
 				if (b() == 1)
 				{
-					free(line),free(msg), free(arg), exit(127);
-					/*return (1);*/
+					free(line), free(msg), free(arg), exit(127);
 				}
 				continue; }
 			child_exec(arg, msg, count);
