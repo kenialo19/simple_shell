@@ -32,6 +32,6 @@ char **token_command(char *line)
 	{
 		token[i] = strtok(NULL, space);
 	}
-
+	token[i] = NULL;
 	return (token);
 }
