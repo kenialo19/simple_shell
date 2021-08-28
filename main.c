@@ -30,6 +30,11 @@ int main(void)
 		if (line != NULL && line[0] != '\n' && j != 0)
 		{
 			msg = malloc(sizeof(char) * _strlen(line) + 1);
+			if (msg == NULL)
+			{
+				free(msg);
+				return (0);
+			}
 			_strcpy(msg, line);
 			arg = token_command(line);
 			b = _get_built(arg[0]);
@@ -37,8 +42,7 @@ int main(void)
 			{
 				if (b() == 1)
 				{
-					free(line), free(msg), free(arg), exit(127);
-				}
+					free(line), free(msg), free(arg), exit(127); }
 				continue; }
 			child_exec(arg, msg, count);
 			free(msg), free(arg); }
