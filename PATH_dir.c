@@ -54,7 +54,7 @@ char *_path_dir(char *cmd)
 		if (stat(comand, &st) == 0)
 		{
 			dir = _strdup(comand);
-			return (dir);
+			return (comand);
 		}
 		dir = strtok(NULL, colon);
 	}
